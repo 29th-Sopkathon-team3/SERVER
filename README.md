@@ -41,17 +41,39 @@
 <img src="https://user-images.githubusercontent.com/54793607/142727513-c1c560ec-93e0-4fc8-be76-9709d7e7e740.jpeg">
 
 <br>
+<br>
+
+---
 
 ## API Docs
 
 [WOORIDO API Docs](https://scrawny-trust-955.notion.site/API-Docs-3c1f05f7f9d14ec79ca38b3755aa90a1)
 
 <br>
+<br>
+
+---
 
 ## ERD
 
+<img src="https://user-images.githubusercontent.com/54793607/142741411-3df771f0-f9d4-4555-acff-0d5eec01ce19.png">
+
 <br>
+<br>
+
+---
 
 ## DataGrip Table
 
+#### profile
+
+<img src="https://user-images.githubusercontent.com/54793607/142741456-1cedf968-9369-4fe8-98d6-c336b7069a7f.png">
+
+#### room
+
+<img src="https://user-images.githubusercontent.com/54793607/142741463-58c18bcd-3733-4553-a503-083098439618.png">
+
+#### user
+
+<img src="https://user-images.githubusercontent.com/54793607/142741470-0e23807a-ee40-4e09-a035-5750be5c74ad.png">
 <br>

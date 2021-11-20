@@ -3,3 +3,4 @@ node_modules
 .env
 sopkathon-firebase-adminsdk-4y0ol-602d3a72a3.json
 .DS_Store
+awsconfig.json
