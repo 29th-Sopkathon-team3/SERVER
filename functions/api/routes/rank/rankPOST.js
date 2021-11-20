@@ -25,7 +25,15 @@ module.exports = async (req, res) => {
 
     const room = await rankDB.addRank(client, code, title);
 
-    res.status(statusCode.BAD_REQUEST).send(util.success(statusCode.OK, responseMessage.ADD_ONE_POST_SUCCESS, room));
+    res.status(statusCode.BAD_REQUEST)
+      .send(util.success
+        (
+          statusCode.OK,
+          responseMessage.CREATE_ROOM_SUCCESS,
+          room
+        )
+      );
+  
   } catch (error) {
     functions.logger.error(`[ERROR] [${req.method.toUpperCase()}] ${req.originalUrl}`, `[CONTENT] ${error}`);
     console.log(error);
