@@ -5,10 +5,14 @@ module.exports = {
   // 프로필 조회
   READ_PROFILE_SUCCESS: '프로필 조회 성공',
 
+  // 방 생성
+  CREATE_ROOM_SUCCESS: '방 생성 성공',
+
   // 유저
   READ_ONE_USER_SUCCESS: '유저 조회 성공',
   READ_ALL_USERS_SUCCESS: '모든 유저 조회 성공',
   CREATE_ONE_USER_SUCCESS: '유저 생성 성공',
+  UPDATE_USER_POINT_SUCCESS: '점수 갱신 성공',
 
   // 서버 내 오류
   INTERNAL_SERVER_ERROR: '서버 내 오류',

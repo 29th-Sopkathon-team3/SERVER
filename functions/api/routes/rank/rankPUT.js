@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
       .send(util.success
         (
           statusCode.OK,
-          responseMessage.UPDATE_ONE_USER_SUCCESS,
+          responseMessage.UPDATE_USER_POINT_SUCCESS,
           user
         )
       );
