@@ -12,7 +12,7 @@
 
 ## WOORIDO Server
 
-|                                                 [권세훈](hhttps://github.com/devkwonsehoon)                                                  |                                                   [서호영](https://github.com/tkarndbrtk)                                                    |
+|                                                 [권세훈](https://github.com/devkwonsehoon)                                                  |                                                   [서호영](https://github.com/tkarndbrtk)                                                    |
 | :------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://user-images.githubusercontent.com/54793607/142727985-d8aaaad5-f7b1-47bb-91e5-fb4936db1b74.png" width="180" height="200" /> | <img src="https://user-images.githubusercontent.com/54793607/142727990-4f79b65b-c12b-4d15-b171-29c61287908a.png" width="150" height="200" /> |
 
