@@ -9,8 +9,8 @@ module.exports = {
   READ_ONE_USER_SUCCESS: '유저 조회 성공',
   READ_ALL_USERS_SUCCESS: '모든 유저 조회 성공',
   CREATE_ONE_USER_SUCCESS: '유저 생성 성공',
-  
 
   // 서버 내 오류
   INTERNAL_SERVER_ERROR: '서버 내 오류',
 };
+
