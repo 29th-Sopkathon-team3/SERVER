@@ -6,47 +6,23 @@ const db = require('../../../db/db');
 const { rankDB } = require('../../../db');
 
 module.exports = async (req, res) => {
+  const { code } = req.params;
 
+  if (!code) return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
 
-  const {code} = req.params;
-  
-  
-  if (!code) return res.status(statusCode.BAD_REQUEST)
-    .send(util.fail
-      (
-        statusCode.BAD_REQUEST,
-        responseMessage.NULL_VALUE
-      )
-    );
-  
   let client;
-  
+
   try {
     client = await db.connect(req);
 
-    const users = await rankDB.getAllRanks(client, code)
+    const users = await rankDB.getAllRanks(client, code);
 
-    res.status(statusCode.BAD_REQUEST)
-      .send(util.success
-        (
-          statusCode.OK,
-          responseMessage.READ_ALL_USERS_SUCCESS,
-          users
-        )
-      );
-  
+    res.status(statusCode.BAD_REQUEST).send(util.success(statusCode.OK, responseMessage.READ_ALL_USERS_SUCCESS, users));
   } catch (error) {
     functions.logger.error(`[ERROR] [${req.method.toUpperCase()}] ${req.originalUrl}`, `[CONTENT] ${error}`);
     console.log(error);
-    
-    res.status(statusCode.BAD_REQUEST)
-      .send(util.fail
-        (
-          statusCode.BAD_REQUEST,
-          responseMessage.NULL_VALUE
-        )
-      );
-  
+
+    res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, responseMessage.NULL_VALUE));
   } finally {
     client.release();
   }

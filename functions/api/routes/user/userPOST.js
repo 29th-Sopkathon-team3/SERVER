@@ -6,7 +6,6 @@ const db = require('../../../db/db');
 const { userDB } = require('../../../db');
 
 module.exports = async (req, res) => {
-  //   const profileImage = req.file;
   const { code, username, userId } = req.body;
   const url = 'https://user-images.githubusercontent.com/54793607/142727985-d8aaaad5-f7b1-47bb-91e5-fb4936db1b74.png';
 
