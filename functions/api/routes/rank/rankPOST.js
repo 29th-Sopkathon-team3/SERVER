@@ -1,0 +1,68 @@
+const functions = require('firebase-functions');
+const util = require('../../../lib/util');
+const statusCode = require('../../../constants/statusCode');
+const responseMessage = require('../../../constants/responseMessage');
+const db = require('../../../db/db');
+const {rankDB} = require('../../../db')
+
+module.exports = async (req, res) => {
+
+  const {title} = req.body
+
+  const code = Math.floor(Math.random() * (999999 - 100000)) + 100000;
+  
+  if (!title) {
+    return res.status(statusCode.BAD_REQUEST)
+      .send(util.fail
+        (
+          statusCode.BAD_REQUEST,
+          responseMessage.NULL_VALUE
+        )
+      );
+  }
+  let client;
+  
+  
+  try {
+    client = await db.connect(req);
+
+    const code = Math.floor(Math.random() * (999999 - 100000)) + 100000;
+    const cnt = await rankDB.tmp(client, code)
+    
+    if (cnt[0]['cnt'] != 0) {
+      return res.status(statusCode.BAD_REQUEST)
+        .send(util.fail
+          (
+            statusCode.BAD_REQUEST,
+            responseMessage.ALREADY_CODE,
+          )
+        );
+    };
+
+    const room = await rankDB.addRank(client, code, title)
+
+    res.status(statusCode.BAD_REQUEST)
+      .send(util.success
+        (
+          statusCode.OK,
+          responseMessage.ADD_ONE_POST_SUCCESS,
+          room
+        )
+      );
+  
+  } catch (error) {
+    functions.logger.error(`[ERROR] [${req.method.toUpperCase()}] ${req.originalUrl}`, `[CONTENT] ${error}`);
+    console.log(error);
+    
+    res.status(statusCode.BAD_REQUEST)
+      .send(util.fail
+        (
+          statusCode.BAD_REQUEST,
+          responseMessage.NULL_VALUE
+        )
+      );
+  
+  } finally {
+    client.release();
+  }
+};

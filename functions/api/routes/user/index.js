@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/', require('./userPOST')); // 프사, 닉네임
-router.get('/', require('./userListGET')); // 리스트
+// router.post('/', require('./userPOST')); // 프사, 닉네임
+// router.get('/', require('./userListGET')); // 리스트
 
 module.exports = router;
 
