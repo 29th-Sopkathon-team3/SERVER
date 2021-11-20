@@ -45,7 +45,7 @@ module.exports = async (req, res) => {
       .send(util.success
         (
           statusCode.OK,
-          responseMessage.ADD_ONE_POST_SUCCESS,
+          responseMessage.CREATE_ROOM_SUCCESS,
           room
         )
       );
