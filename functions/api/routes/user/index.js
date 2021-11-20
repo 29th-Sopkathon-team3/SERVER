@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/list', require('./userListGET'));
+router.post('/', require('./userPOST')); // 프사, 닉네임
+router.get('/', require('./userGET')); // 상세정보
+router.get('/list', require('./userListGET')); // 리스트
 
 module.exports = router;
+
+// const verifyCode = Math.floor(Math.random() * (999999 - 100000)) + 100000;
